@@ -6,17 +6,20 @@ import { connect } from 'react-redux'
 
  class App extends Component {
     render() {
-        const { name, surname, age } = this.props.user;
+        // (1)
+        const {name,tabs}=this.props.menu;
         return <div>
-            <p>Привет из App, {name} {surname}!</p>
-            <p>Тебе уже {age} ?</p>
+            <p> {name}!</p>
+            {tabs.map(function(item, index){
+                return <a href='#' key={ index }>{item}</a>;
+            })}
         </div>
     }
 }
 
 function mapStateToProps (state) {
     return {
-        user: state
+        menu: state.menu
     }
 }
 
