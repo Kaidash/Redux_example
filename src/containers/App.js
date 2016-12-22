@@ -3,16 +3,13 @@
  */
 import React, { Component} from 'react'
 import { connect } from 'react-redux'
+import Page from '../components/Page'
 
  class App extends Component {
     render() {
-        // (1)
-        const {name,tabs}=this.props.menu;
+        const{menu}=this.props;
         return <div>
-            <p> {name}!</p>
-            {tabs.map(function(item, index){
-                return <a href='#' key={ index }>{item}</a>;
-            })}
+         <Page name={menu.name} tabs={menu.tabs}/>
         </div>
     }
 }
