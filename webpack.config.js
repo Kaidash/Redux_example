@@ -23,12 +23,12 @@ module.exports = {
     module: { //Обновлено
         loaders: [ //добавили babel-loader
             {
-                loaders: ['babel-loader'],
+                loaders: ['react-hot','babel-loader'],
                 include: [
-                    path.resolve(__dirname, "src"),
+                    path.resolve(__dirname, "src")
                 ],
                 test: /\.js$/,
-                plugins: ['transform-runtime'],
+                plugins: ['transform-runtime']
             }
         ]
     }
