@@ -2,14 +2,18 @@
  * Created by nikita on 22.12.16.
  */
 import React, { Component} from 'react'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Page from '../components/Page'
+import Menu from '../components/Menu'
+import * as menuActions from '../actions/MenuActions'
 
  class App extends Component {
     render() {
         const{menu}=this.props;
+        const { setMenu } = this.props.menuActions;
+
         return <div>
-         <Page name={menu.name} tabs={menu.tabs}/>
+         <Menu name={menu.name} tabs={menu.tabs} setMenu={setMenu}/>
         </div>
     }
 }
@@ -20,4 +24,10 @@ function mapStateToProps (state) {
     }
 }
 
-export default connect(mapStateToProps)(App)
+function mapDispatchToProps(dispatch) {
+    return {
+        menuActions: bindActionCreators(menuActions, dispatch)
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(App)
