@@ -7,6 +7,8 @@ const initialState = {
 };
 
 export default function menu(state = initialState,action) {
+    console.log(action);
+    console.log('menuReducer');
     switch (action.type) {
         case 'SET_MENU':
             return { ...state, name: action.payload };

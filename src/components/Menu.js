@@ -3,7 +3,7 @@
  */
 import React, { PropTypes, Component } from 'react'
 
-export default class Page extends Component {
+export default class Menu extends Component {
     onMenuLinkClick(e) {
         this.props.setMenu(e.target.textContent)
     }
@@ -23,7 +23,7 @@ export default class Page extends Component {
     }
 }
 
-Page.propTypes = {
+Menu.propTypes = {
     name: PropTypes.string.isRequired,
     tabs: PropTypes.array.isRequired,
     setMenu: PropTypes.func.isRequired
