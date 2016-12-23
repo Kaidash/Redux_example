@@ -5,17 +5,18 @@ import React, { PropTypes, Component } from 'react'
 
 export default class Menu extends Component {
     onMenuLinkClick(e) {
+        e.preventDefault();
         this.props.setMenu(e.target.textContent)
     }
     render() {
         const {name,tabs}=this.props;
-        return <div>
-            <ul>
-                <li><button onClick={::this.onMenuLinkClick} >menu1</button></li>
-                <li><button onClick={::this.onMenuLinkClick} >menu2</button></li>
-                <li><button onClick={::this.onMenuLinkClick} >menu3</button></li>
+        return <div className='nav'>
+            <ul className='primary'>
+                <li><a href='#' className='link' onClick={::this.onMenuLinkClick} >menu1</a></li>
+                <li><a href='#' className='link' onClick={::this.onMenuLinkClick} >menu2</a></li>
+                <li><a href='#' className='link' onClick={::this.onMenuLinkClick} >menu3</a></li>
             </ul>
-            <p> {name}!</p>
+            <span className='Menu-name'> {name}!</span>
             {tabs.map(function(item, index){
                 return <a href='#' key={ index }>{item}</a>;
             })}
