@@ -18,7 +18,7 @@ import * as userActions from '../actions/UserActions'
         const { setUser } = this.props.userActions;
 
         return <div>
-         <Menu name={menu.name} tabs={menu.tabs} setMenu={setMenu}/>
+         <Menu index={menu.index} tabs={menu.menuTabs} setMenu={setMenu}/>
         <User nameUser={user.nameUser} setUser={setUser}/>
         </div>
     }

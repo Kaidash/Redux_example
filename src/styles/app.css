@@ -50,6 +50,7 @@ ul:after {
 span{
     color: #9da0a4;
 }
+
 .nav {
     margin: 5vh 20vw;
     position: relative;
@@ -139,7 +140,11 @@ ul.primary li:hover a {
 ul.primary li:hover > a{
     color: #000;
 }
-
+ul.primary li.active > a{
+    background: #fff!important;
+    color: #000;
+    text-shadow: none;
+}
 @media only screen and (max-width: 600px) {
     .decor {
         padding: 3px;

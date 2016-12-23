@@ -2,30 +2,29 @@
  * Created by nikita on 22.12.16.
  */
 import React, { PropTypes, Component } from 'react'
+import Tab from '../components/Tab'
 
 export default class Menu extends Component {
     onMenuLinkClick(e) {
         e.preventDefault();
-        this.props.setMenu(e.target.textContent)
+        // this.props.setMenu(e.target.textContent)
     }
     render() {
-        const {name,tabs}=this.props;
+        const {index,tabs,setMenu}=this.props;
         return <div className='nav'>
             <ul className='primary'>
-                <li><a href='#' className='link' onClick={::this.onMenuLinkClick} >menu1</a></li>
-                <li><a href='#' className='link' onClick={::this.onMenuLinkClick} >menu2</a></li>
-                <li><a href='#' className='link' onClick={::this.onMenuLinkClick} >menu3</a></li>
+                { tabs.map( (value,i) =>
+                <Tab key={i} isSelected={this.props.index == i} index={i} onClick={::this.onMenuLinkClick} setMenu={setMenu} value={value}/>
+                )}
             </ul>
-            <span className='Menu-name'> {name}!</span>
-            {tabs.map(function(item, index){
-                return <a href='#' key={ index }>{item}</a>;
-            })}
+            <span className='Menu-name'> {index}!</span>
+
         </div>
     }
 }
 
 Menu.propTypes = {
-    name: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
     tabs: PropTypes.array.isRequired,
     setMenu: PropTypes.func.isRequired
 };

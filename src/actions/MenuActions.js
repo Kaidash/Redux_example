@@ -3,10 +3,10 @@
  */
 import { SET_MENU } from '../constants/Menu'
 
-export function setMenu(name) {
-    console.log(name);
+export function setMenu(index) {
+    console.log(index);
     return {
         type: SET_MENU,
-        payload: name
+        payload: index
     }
 }

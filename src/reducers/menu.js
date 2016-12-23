@@ -5,8 +5,12 @@
 import { SET_MENU } from '../constants/Menu'
 
 const initialState = {
-    name: 'menu1',
-    tabs:['tab1','tab2','tab3']
+    menuTabs: [
+        'Menu 1',
+        'Menu 2',
+        'Menu 3'
+    ],
+    index:0
 };
 
 export default function menu(state = initialState,action) {
@@ -14,7 +18,7 @@ export default function menu(state = initialState,action) {
     console.log('menuReducer');
     switch (action.type) {
         case SET_MENU:
-            return { ...state, name: action.payload };
+            return { ...state, index: action.payload };
         default:
             return state;
     }
