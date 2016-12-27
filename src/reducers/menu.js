@@ -10,7 +10,7 @@ const initialState = {
         'Menu 2',
         'Menu 3'
     ],
-    index:0
+    index:1
 };
 
 export default function menu(state = initialState,action) {

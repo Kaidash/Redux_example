@@ -1,18 +1,18 @@
 /**
- * Created by nikita on 23.12.16.
+ * Created by nikita on 27.12.16.
  */
 import React, { PropTypes, Component } from 'react'
 
 export default class Tab extends Component {
-    onMenuLinkClick(e) {
+    onTabClick(e) {
         e.preventDefault();
-         this.props.setMenu(this.props.index)
+        this.props.setTab(this.props.indexTab)
     }
     render() {
         const {value}=this.props;
-        return <li className={this.props.isSelected ? 'active':''}>
-                    <a href='#'  onClick={::this.onMenuLinkClick}>{value} </a>
-                </li>
+        return <li className={this.props.isSelected ? 'active tabItem':'tabItem'}>
+            <a href='#' onClick={::this.onTabClick}>{value}</a>
+        </li>
     }
 }
 

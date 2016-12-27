@@ -145,6 +145,50 @@ ul.primary li.active > a{
     color: #000;
     text-shadow: none;
 }
+
+
+/*TABS*/
+
+.tabs{
+    position: relative;
+    display: block;
+    width: 40em;
+    height: 15em;
+    margin: 2em auto;
+}
+.tabs ul{
+    display: flex;
+    justify-content:flex-start;
+}
+.tabs ul li{
+    padding:5px 10px;
+    background: #ddd;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    margin-right: 3px;
+}
+.tabs ul li.active{
+    background: #fff;
+}
+.tabInner{
+    position: absolute;
+    display: block;
+    top: 1.7em;
+    left: 0;
+    height: 12em;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+    z-index: 0;
+    width: 100%;
+
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
 @media only screen and (max-width: 600px) {
     .decor {
         padding: 3px;

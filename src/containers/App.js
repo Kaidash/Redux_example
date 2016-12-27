@@ -8,17 +8,18 @@ import Menu from '../components/Menu'
 import User from '../components/User'
 import * as menuActions from '../actions/MenuActions'
 import * as userActions from '../actions/UserActions'
+import * as tabActions from '../actions/TabActions'
+
 
 
  class App extends Component {
     render() {
-        const{menu}=this.props;
-        const{user}=this.props;
+        const{menu,user,tab}=this.props;
         const { setMenu } = this.props.menuActions;
         const { setUser } = this.props.userActions;
-
+        const { setTab } = this.props.tabActions;
         return <div>
-         <Menu index={menu.index} tabs={menu.menuTabs} setMenu={setMenu}/>
+         <Menu index={menu.index} tabs={menu.menuTabs} tabtitle={tab.tabTitle} tabindex={tab.index} setTab={setTab} setMenu={setMenu}/>
         <User nameUser={user.nameUser} setUser={setUser}/>
         </div>
     }
@@ -27,14 +28,16 @@ import * as userActions from '../actions/UserActions'
 function mapStateToProps (state) {
     return {
         menu: state.menu,
-        user:state.user
+        user:state.user,
+        tab:state.tab
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         menuActions: bindActionCreators(menuActions, dispatch),
-        userActions: bindActionCreators(userActions, dispatch)
+        userActions: bindActionCreators(userActions, dispatch),
+        tabActions:bindActionCreators(tabActions, dispatch)
     }
 }
 
